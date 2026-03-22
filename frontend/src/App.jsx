@@ -10,7 +10,7 @@ function App() {
     setLoading(true)
     setError(null)
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      const apiUrl = import.meta.env.VITE_API_URL;
       const response = await fetch(`${apiUrl}/api/message`)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="title">Full Stack App</h1>
-      
+
       <div className="message-box">
         {loading ? (
           <p className="loading">Fetching data from Express backend...</p>
